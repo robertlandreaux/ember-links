@@ -1,0 +1,16 @@
+{{#if session.isAuthenticated}}
+  <button {{action 'invalidateSession'}}>Logout</button>
+{{else}}
+  {{#link-to 'login'}}Login{{/link-to}}
+{{/if}}
+
+{{outlet}}
+
+{{#each model as |link|}}
+  <ul>
+    <li>{{link.title}}</li>
+    <li>{{link.url}}</li>
+    <li>{{link.description}}</li>
+  </ul>
+  <br>
+{{/each}}
